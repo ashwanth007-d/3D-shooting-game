@@ -1,5 +1,25 @@
 # DOOM-3D-FPS-Shooting-Game
-**DOOM** is a **3 dimensional first person shooter (FPS) shooting game** which uses the **raycasting algorithm** to generate a pseudo 3D environment and **pathfinding algorithm** for smart player enemy interaction. It is built using **Pygame** module in **Python** and takes advantage of the raycasting algorithm to make a 3D gameplay despite not being a 3D game engine unlike Unity, Unreal, Godot and others that are available in the market.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
+
+**DOOM** is a **3 dimensional first person shooter (FPS) shooting game** which uses the **raycasting algorithm** to generate a pseudo 3D environment and **pathfinding algorithm** for smart player enemy interaction. It is built using **Pygame** in **Python** and includes a **Streamlit Web Application (`app.py`)** for interactive web exploration, live browser gameplay, algorithm simulations, and deployment.
+
+---
+
+### 🌐 Live Streamlit Web App & Browser Gameplay
+You can run or deploy the interactive Streamlit edition of this project which includes:
+- **Playable 3D Web DOOM**: Smooth 60 FPS HTML5 Canvas Raycasting FPS with WASD controls, mini-map, enemies, and shotgun audio right in your browser!
+- **Interactive 2D Raycasting Visualizer**: Test FOV, ray counts, and fish-eye distortion corrections in real time.
+- **BFS Pathfinding Explorer**: Step through how demons find the shortest path around walls.
+- **Asset Showcase**: Full animation gallery for demons, weapons, and raycasting sweeps.
+
+#### Run Streamlit Locally:
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
 
 Below is the demonstration of the gameplay.
 
