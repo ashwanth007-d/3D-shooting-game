@@ -83,7 +83,7 @@ st.markdown("""
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 </style>
-""", unsafe_allow_color_html=True)
+""", unsafe_allow_html=True)
 
 # ----------------- MAP DEFINITION (Matching map.py) -----------------
 _ = 0
@@ -1133,21 +1133,27 @@ with tabs[3]:
     st.markdown("### 📸 Project Gallery & Animations")
     st.markdown("Screenshots and animated captures from the desktop DOOM engine demonstration.")
 
+    def render_responsive_image(img_path, img_caption):
+        try:
+            st.image(img_path, caption=img_caption, width="stretch")
+        except TypeError:
+            st.image(img_path, caption=img_caption, use_container_width=True)
+
     g1, g2 = st.columns(2)
     with g1:
         if os.path.exists("photos/gameplay_1.gif"):
-            st.image("photos/gameplay_1.gif", caption="1. Full Gameplay Demo (Pygame)", use_container_width=True)
+            render_responsive_image("photos/gameplay_1.gif", "1. Full Gameplay Demo (Pygame)")
         if os.path.exists("photos/raycast_1.gif"):
-            st.image("photos/raycast_1.gif", caption="3. 2D Raycasting Field-of-View Sweep", use_container_width=True)
+            render_responsive_image("photos/raycast_1.gif", "3. 2D Raycasting Field-of-View Sweep")
         if os.path.exists("photos/player_enemy_2.gif"):
-            st.image("photos/player_enemy_2.gif", caption="5. BFS Enemy Pathfinding in Action", use_container_width=True)
+            render_responsive_image("photos/player_enemy_2.gif", "5. BFS Enemy Pathfinding in Action")
     with g2:
         if os.path.exists("photos/weapon_1.gif"):
-            st.image("photos/weapon_1.gif", caption="2. Weapon Recoil & Muzzle Animation", use_container_width=True)
+            render_responsive_image("photos/weapon_1.gif", "2. Weapon Recoil & Muzzle Animation")
         if os.path.exists("photos/player_1.gif"):
-            st.image("photos/player_1.gif", caption="4. 2D Collision & Movement Verification", use_container_width=True)
+            render_responsive_image("photos/player_1.gif", "4. 2D Collision & Movement Verification")
         if os.path.exists("photos/gameplay_2.gif"):
-            st.image("photos/gameplay_2.gif", caption="6. Demon Encounters & Combat", use_container_width=True)
+            render_responsive_image("photos/gameplay_2.gif", "6. Demon Encounters & Combat")
 
     st.markdown("---")
     st.markdown("#### 👾 Enemy Sprite Sheets")
